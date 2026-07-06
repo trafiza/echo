@@ -1,0 +1,12 @@
+{
+  "name": "echo",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.10.0",
+  "scripts": {
+    "dev": "echo \"Apps ainda não configuradas\"",
+    "build": "echo \"Build ainda não configurado\"",
+    "lint": "echo \"Lint ainda não configurado\"",
+    "format": "echo \"Format ainda não configurado\""
+  }
+}
