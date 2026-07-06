@@ -1,6 +1,6 @@
 # Echo
 
-A modern communication platform inspired by Discord.
+A modern communication platform.
 
 ## Stack
 
