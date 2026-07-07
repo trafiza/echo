@@ -30,6 +30,7 @@ model User {
 
   ownedServers Server[]     @relation("ServerOwner")
   memberships  Membership[]
+  messages     Message[]
 }
 
 model Server {
@@ -76,4 +77,20 @@ model Channel {
 
   serverId String
   server   Server @relation(fields: [serverId], references: [id])
+
+  messages Message[]
+}
+
+model Message {
+  id      String @id @default(cuid())
+  content String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  authorId String
+  author   User   @relation(fields: [authorId], references: [id], onDelete: Cascade)
+
+  channelId String
+  channel   Channel @relation(fields: [channelId], references: [id], onDelete: Cascade)
 }

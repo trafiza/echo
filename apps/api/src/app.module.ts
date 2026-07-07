@@ -7,10 +7,11 @@ import { UsersModule } from './modules/users/users.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { ServersModule } from './modules/servers/servers.module';
 import { ChannelsModule } from './modules/channels/channels.module';
+import { MessagesModule } from './modules/messages/messages.module';
 
 
 @Module({
-  imports: [PrismaModule, HealthModule, UsersModule, AuthModule, ServersModule, ChannelsModule],
+  imports: [PrismaModule, HealthModule, UsersModule, AuthModule, ServersModule, ChannelsModule, MessagesModule],
   controllers: [AppController],
   providers: [AppService],
 })
