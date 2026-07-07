@@ -19,13 +19,25 @@ export class ServersService {
         },
       });
 
-      await tx.membership.create({
-        data: {
-          userId,
-          serverId: server.id,
-          role: 'OWNER',
-        },
-      });
+      await tx.channel.createMany({
+  data: [
+    {
+      name: 'announcements',
+      type: 'TEXT',
+      serverId: server.id,
+    },
+    {
+      name: 'general',
+      type: 'TEXT',
+      serverId: server.id,
+    },
+    {
+      name: 'General Voice',
+      type: 'VOICE',
+      serverId: server.id,
+    },
+  ],
+});
 
       return server;
     });
